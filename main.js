@@ -1,3 +1,4 @@
+'use strict';
 // HTMLより入力欄、追加ボタン、追加した内容を表示するためにIDを取得
 const addTask = document.getElementById('addtask');
 const submitButton = document.getElementById('submit');
@@ -27,13 +28,22 @@ const addTodo = () => {
 submitButton.addEventListener('click', () => {
   const pushTodo = addTodo();
   todos.push(pushTodo);
+  showTodos();
+  // pushされた後に空の文字列を値に代入することで、タスク登録後インプットの中身が空になり、再び新しく登録できるようになる
   addTask.value = '';
 });
 
-// tososの中身を一覧表示させる
-const showTodos = (selecttodos) => {
-  todolists = '';
+// todosの中身を一覧表示させる
+const showTodos = () => {
   
-  const table = document.createElement('tr');
-  
+  todos.forEach((todo) => {
+    const todoItem = document.createElement('tr');
+    todoLists.appendChild(todoItem);
+    const todoIdNam = document.createElement('th');
+    const todoStatus = document.createElement('th');
+    const todoAction = document.createElement('th');
+// tr,tdタグを作成した後、innerHTMLでID、コメント、状態、削除ボタンを出力する
+    todoIdNam.innerHTML = todo.idNum;
+
+  });
 }
