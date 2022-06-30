@@ -36,6 +36,7 @@ const createListView = () => {
 
     todoId.innerHTML = task.id;  //コールバック関数の第一引数(task)からtodosの各値を取得させinnerHTMLで記述
     todoComment.innerHTML = task.comment;  //コールバック関数の第一引数(task)からtodosの各値を取得させinnerHTMLで記述
+    todoStatus.innerHTML = task.status;
     deleteButton.innerHTML = '削除';
     deleteButton.classList.add('delete');  //要素に'delete'クラスを付与
     todoDelete.appendChild(deleteButton); //上記で新しく'delete'クラスをつくりth要素に差し込む
